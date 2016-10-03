@@ -137,6 +137,11 @@ Survival analysis confirms that age, gender and class are significant predictors
 
 ![All Survival Factors](./Plots/Surv_Prob_Factors_All.png)
 
+## Conclusion
+Although gender, age and class are all significant predictors of survival, these factors applied unevenly to Titanic passengers. For example, though males generally had low survival probability, first class males were an exception, surviving at higher rates than other males. Similarly, although females survived at generally higher rates, this is more true for first class females than for third class females.  As the survival analysis reveals, third class females have about the same survival probability as second and third class males. 
+
+Lastly, the low overall survival rate underscores that no group had an exceptionally high chance to survive. While the chances of dying are unbalanced, the chances of surviving are more even.  In first class, the chances of dying were about 9% versus nearly 42% in third class. However, the chances of surviving in first class were only 15% versus 13% in third class. Given these low chances of survival, the great extent to which female and upper class passengers survived is an unavoidable anomaly, typically explained by the Titanic crew filling the ship's limited lifeboats preferentially with young, female, upper class passengers.  
+
 
 
 
