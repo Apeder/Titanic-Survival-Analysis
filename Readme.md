@@ -58,7 +58,7 @@ A mosaic plot is a helpful visual cross tabulation that shows 3rd class males as
 
 ![Passenger Survival Cross Tabulation](./Plots/mosaic.png)
 
-As well, we observe that survivors are younger on average (28.34 years) than the average age (29.7 years), and those who died are older (30.63 years).
+As well, we observe that survivors are younger on average (28.34 years) than the average age (29.7 years), and those who died are older (30.63 years).  Although the age variable contained 177 missing values, these were excluded from statistical summaries and tests and had no meaningful impact on the analysis. 
 
 Given the stark differences observed between males, females, different classes and age, we narrow our focus to gender, class and age to investigate predictive survival factors. 
 

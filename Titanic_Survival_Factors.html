@@ -11888,7 +11888,9 @@ The survival rate of female passengers was 74.20%
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Survivors are younger than the average age, and those who died are older.</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Survivors are younger than the average age, and those who died are older. As the age variable contains 177 missing values,</span>
+<span class="c1"># we exclude these to calculate summary statistics.  The missing values in age are automatically excluded in our regressio</span>
+<span class="c1"># and don&#39;t meaningfully affect our analysis in any other way. </span>
 
 <span class="n">avg_age</span> <span class="o">=</span> <span class="n">PassData</span><span class="o">.</span><span class="n">Age</span><span class="p">[</span><span class="n">PassData</span><span class="o">.</span><span class="n">Age</span><span class="o">.</span><span class="n">notnull</span><span class="p">()</span> <span class="o">==</span> <span class="bp">True</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 <span class="k">print</span> <span class="s1">&#39;The average age of all passengers onboard was &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="s2">&quot;{0:.2f}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">avg_age</span><span class="p">))</span>
@@ -17791,6 +17793,327 @@ Z/QIIIAAAhkJUIAzgue0CCCAAAL5FvgDFaQmKt75+14AAAAASUVORK5CYII=
 
 </div>
 
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Titanic-Survival-Analysis-Summary">Titanic Survival Analysis Summary<a class="anchor-link" href="#Titanic-Survival-Analysis-Summary">&#182;</a></h1><h2 id="Summary-Survival-Statistics">Summary Survival Statistics<a class="anchor-link" href="#Summary-Survival-Statistics">&#182;</a></h2><p><strong>Passenger Survival Cross Tabulation</strong></p>
+<table>
+<thead><tr>
+<th></th>
+<th></th>
+<th>No</th>
+<th>Yes</th>
+<th>Sum</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>female</td>
+<td>1st</td>
+<td>3</td>
+<td>91</td>
+<td>94</td>
+</tr>
+<tr>
+<td></td>
+<td>2nd</td>
+<td>6</td>
+<td>70</td>
+<td>76</td>
+</tr>
+<tr>
+<td></td>
+<td>3rd</td>
+<td>72</td>
+<td>72</td>
+<td>144</td>
+</tr>
+<tr>
+<td></td>
+<td>Sum</td>
+<td>81</td>
+<td>233</td>
+<td>314</td>
+</tr>
+<tr>
+<td>male</td>
+<td>1st</td>
+<td>77</td>
+<td>45</td>
+<td>122</td>
+</tr>
+<tr>
+<td></td>
+<td>2nd</td>
+<td>91</td>
+<td>17</td>
+<td>108</td>
+</tr>
+<tr>
+<td></td>
+<td>3rd</td>
+<td>300</td>
+<td>47</td>
+<td>347</td>
+</tr>
+<tr>
+<td></td>
+<td>Sum</td>
+<td>468</td>
+<td>109</td>
+<td>577</td>
+</tr>
+<tr>
+<td>Sum</td>
+<td>1st</td>
+<td>80</td>
+<td>136</td>
+<td>216</td>
+</tr>
+<tr>
+<td></td>
+<td>2nd</td>
+<td>97</td>
+<td>87</td>
+<td>184</td>
+</tr>
+<tr>
+<td></td>
+<td>3rd</td>
+<td>372</td>
+<td>119</td>
+<td>491</td>
+</tr>
+<tr>
+<td></td>
+<td>Sum</td>
+<td>549</td>
+<td>342</td>
+<td>891</td>
+</tr>
+</tbody>
+</table>
+<p><strong>All Passengers Proportion Table</strong></p>
+<table>
+<thead><tr>
+<th></th>
+<th>1st</th>
+<th>2nd</th>
+<th>3rd</th>
+<th>Sum</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>female</td>
+<td>0.105499439</td>
+<td>0.085297419</td>
+<td>0.161616162</td>
+<td>0.352413019</td>
+</tr>
+<tr>
+<td>male</td>
+<td>0.136924804</td>
+<td>0.121212121</td>
+<td>0.389450056</td>
+<td>0.647586981</td>
+</tr>
+<tr>
+<td>Sum</td>
+<td>0.242424242</td>
+<td>0.206509540</td>
+<td>0.551066218</td>
+<td>1.000000000</td>
+</tr>
+</tbody>
+</table>
+<p>Of 891 passengers, 342 survived, yielding a 38.38% overall survival rate.  The 577 males represented about 64.75% of all passengers, yet only 18.89% of all males survived. The 314 females represented 35.24% of all passengers, yet 74.24% of all females survived. 24.24% of passengers traveled in 1st Class, 20.65% in 2nd and 55.12% in 3rd.</p>
+<p>The proportion tables below show the overall probabilities of surviving given gender and class.</p>
+<h3 id="Passenger-Survival-Proportion-Tables">Passenger Survival Proportion Tables<a class="anchor-link" href="#Passenger-Survival-Proportion-Tables">&#182;</a></h3><p><strong>Did Not Survive</strong></p>
+<table>
+<thead><tr>
+<th></th>
+<th>1st</th>
+<th>2nd</th>
+<th>3rd</th>
+<th>Sum</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>female</td>
+<td>0.003367003</td>
+<td>0.006734007</td>
+<td>0.080808081</td>
+<td>0.090909091</td>
+</tr>
+<tr>
+<td>male</td>
+<td>0.086419753</td>
+<td>0.102132435</td>
+<td>0.336700337</td>
+<td>0.525252525</td>
+</tr>
+<tr>
+<td>Sum</td>
+<td>0.089786756</td>
+<td>0.108866442</td>
+<td>0.417508418</td>
+<td>0.616161616</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Survived</strong></p>
+<table>
+<thead><tr>
+<th></th>
+<th>1st</th>
+<th>2nd</th>
+<th>3rd</th>
+<th>Sum</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>female</td>
+<td>0.102132435</td>
+<td>0.078563412</td>
+<td>0.080808081</td>
+<td>0.261503928</td>
+</tr>
+<tr>
+<td>male</td>
+<td>0.050505051</td>
+<td>0.019079686</td>
+<td>0.052749719</td>
+<td>0.122334456</td>
+</tr>
+<tr>
+<td>Sum</td>
+<td>0.152637486</td>
+<td>0.097643098</td>
+<td>0.133557800</td>
+<td>0.383838384</td>
+</tr>
+</tbody>
+</table>
+<p><img src="./Plots/Survival_Rates.png" alt="Survival Rates by Class and Gender"></p>
+<p>Over half the passengers were in 3rd class, and nearly 2/3 were male, yet these two groups have low survival rates. The average survival rate of 38% is not informative, as it hovers between the low rates of 3rd class and male passengers and the high rates of 1st class and female passengers.</p>
+<p>A mosaic plot is a helpful visual cross tabulation that shows 3rd class males as both the largest demographic on board, as well as the most likely to die.</p>
+<p><img src="./Plots/mosaic.png" alt="Passenger Survival Cross Tabulation"></p>
+<p>As well, we observe that survivors are younger on average (28.34 years) than the average age (29.7 years), and those who died are older (30.63 years).  Although the age variable contained 177 missing values, these were excluded from statistical summaries and tests and had no meaningful impact on the analysis.</p>
+<p>Given the stark differences observed between males, females, different classes and age, we narrow our focus to gender, class and age to investigate predictive survival factors.</p>
+<h2 id="Modeling-Survival-Outcomes">Modeling Survival Outcomes<a class="anchor-link" href="#Modeling-Survival-Outcomes">&#182;</a></h2><p>Since we're modeling a binary outcome, live or die, using mainly categorical predictors, logistic regression is appropriate, and
+these coefficients give the change in the log-odds per each unit of increase. Though the model reduces residual deviance compared to a null model that only includes an intercept term, deviance is still high, meaning that the model leaves a large amount of unexplained variance.</p>
+
+<pre><code>Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-2.7303  -0.6780  -0.3953   0.6485   2.4657  
+
+Coefficients:
+             Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept)  3.777013   0.401123   9.416  &lt; 2e-16 ***
+Class2nd    -1.309799   0.278066  -4.710 2.47e-06 ***
+Class3rd    -2.580625   0.281442  -9.169  &lt; 2e-16 ***
+Sexmale     -2.522781   0.207391 -12.164  &lt; 2e-16 ***
+Age         -0.036985   0.007656  -4.831 1.36e-06 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1</code></pre>
+<p>The model shows significant relationships between survival, age, class and gender. Once exponeniated, the coefficents tell us the percent change in the odds for each predictor when all other factors are held constant.  The confidence intervals are rather wide, however, as the model still leaves quite a bit of unexplained deviance (noise). This is particularly true for 2nd class passengers, who are not as well-represented in the dataset.</p>
+<ul>
+<li>Odds of surviving if in 2nd class are 73% lower</li>
+<li>Odds of surviving if in 3rd class are 92% lower</li>
+<li>Being male means 92% lower odds of survival</li>
+<li>For each year older, 4% lower odds of survival</li>
+</ul>
+<p><strong>Exponentiated Coefficients with 95% Confidence Interval</strong></p>
+<table>
+<thead><tr>
+<th></th>
+<th></th>
+<th>2.5 %</th>
+<th>97.5 %</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>(Intercept)</td>
+<td>43.68534331</td>
+<td>20.37890724</td>
+<td>98.3863313</td>
+</tr>
+<tr>
+<td>Class2nd</td>
+<td>0.26987422</td>
+<td>0.15515074</td>
+<td>0.4621731</td>
+</tr>
+<tr>
+<td>Class3rd</td>
+<td>0.07572664</td>
+<td>0.04299250</td>
+<td>0.1297997</td>
+</tr>
+<tr>
+<td>Sexmale</td>
+<td>0.08023617</td>
+<td>0.05293643</td>
+<td>0.1194848</td>
+</tr>
+<tr>
+<td>Age</td>
+<td>0.96369033</td>
+<td>0.94905346</td>
+<td>0.9780124</td>
+</tr>
+</tbody>
+</table>
+<p>We double checked the model fit with a stepwise analysis of variance that drops variables one at a time and compared the change in deviance using AIC and likelihood ratio:</p>
+
+<pre><code>Single term deletions
+
+Model:
+Survived ~ Class + Sex + Age
+       Df Deviance    AIC     LRT  Pr(&gt;Chi)    
+&lt;none&gt;      647.28 657.28                      
+Class   2   749.96 755.96 102.674 &lt; 2.2e-16 ***
+Sex     1   827.16 835.16 179.881 &lt; 2.2e-16 ***
+Age     1   672.43 680.43  25.148 5.311e-07 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1</code></pre>
+<p>A logistic regression is said to provide a better fit to the data if it demonstrates an improvement over a model with fewer predictors. This is performed using the likelihood ratio test, which compares the likelihood of the data under the full model against the likelihood of the data under a model with fewer predictors.</p>
+<p>Lastly, the Hosmer-Lemeshow goodness of fit test also shows no significant difference between values fitted by our model and the
+observed values.</p>
+
+<pre><code>    Hosmer and Lemeshow goodness of fit (GOF) test
+
+data:  test_factors$Survived, fitted(fit)
+X-squared = 32.677, df = 8, p-value = 7.041e-05</code></pre>
+<h2 id="Survival-Probability-under-Prediction-Model">Survival Probability under Prediction Model<a class="anchor-link" href="#Survival-Probability-under-Prediction-Model">&#182;</a></h2><p>Survival analysis confirms that age, gender and class are significant predictors. Female, upper class and younger passengers are more likely to survive. Two interesting comparisons are 2nd class males and females, where being female made survival much more likely, and 1st class males and other male groups, where upper class booking greatly increased survival.</p>
+<p><img src="./Plots/Surv_Prob_Age_Class.png" alt="Age and Class"></p>
+<p><img src="./Plots/Surv_Prob_Age_Gender.png" alt="Age and Gender"></p>
+<p><img src="./Plots/Surv_Prob_Factors_All.png" alt="All Survival Factors"></p>
+<h2 id="Conclusion">Conclusion<a class="anchor-link" href="#Conclusion">&#182;</a></h2><p>Although gender, age and class are all significant predictors of survival, these factors applied unevenly to Titanic passengers. For example, though males generally had low survival probability, first class males were an exception, surviving at higher rates than other males. Similarly, although females survived at generally higher rates, this is more true for first class females than for third class females.  As the survival analysis reveals, third class females have about the same survival probability as second and third class males.</p>
+<p>Lastly, the low overall survival rate underscores that no group had an exceptionally high chance to survive. While the chances of dying are unbalanced, the chances of surviving are more even.  In first class, the chances of dying were about 9% versus nearly 42% in third class. However, the chances of surviving in first class were only 15% versus 13% in third class. Given these low chances of survival, the great extent to which female and upper class passengers survived is an unavoidable anomaly, typically explained by the Titanic crew filling the ship's limited lifeboats preferentially with young, female, upper class passengers.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span> 
+</pre></div>
+
+</div>
 </div>
 </div>
 
