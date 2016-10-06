@@ -18003,10 +18003,10 @@ Z/QIIIAAAhkJUIAzgue0CCCAAAL5FvgDFaQmKt75+14AAAAASUVORK5CYII=
 </tr>
 </tbody>
 </table>
-<p><img src="./Plots/Survival_Rates.png" alt="Survival Rates by Class and Gender"></p>
+<p><img src="https://raw.githubusercontent.com/Apeder/Titanic-Survival-Analysis/master/Plots/Survival_Rates.png" alt="Survival Rates by Class and Gender"></p>
 <p>Over half the passengers were in 3rd class, and nearly 2/3 were male, yet these two groups have low survival rates. The average survival rate of 38% is not informative, as it hovers between the low rates of 3rd class and male passengers and the high rates of 1st class and female passengers.</p>
 <p>A mosaic plot is a helpful visual cross tabulation that shows 3rd class males as both the largest demographic on board, as well as the most likely to die.</p>
-<p><img src="./Plots/mosaic.png" alt="Passenger Survival Cross Tabulation"></p>
+<p><img src="https://raw.githubusercontent.com/Apeder/Titanic-Survival-Analysis/master/Plots/mosaic.png" alt="Passenger Survival Cross Tabulation"></p>
 <p>As well, we observe that survivors are younger on average (28.34 years) than the average age (29.7 years), and those who died are older (30.63 years).  Although the age variable contained 177 missing values, these were excluded from statistical summaries and tests and had no meaningful impact on the analysis.</p>
 <p>Given the stark differences observed between males, females, different classes and age, we narrow our focus to gender, class and age to investigate predictive survival factors.</p>
 <h2 id="Modeling-Survival-Outcomes">Modeling Survival Outcomes<a class="anchor-link" href="#Modeling-Survival-Outcomes">&#182;</a></h2><p>Since we're modeling a binary outcome, live or die, using mainly categorical predictors, logistic regression is appropriate, and
@@ -18096,9 +18096,9 @@ observed values.</p>
 data:  test_factors$Survived, fitted(fit)
 X-squared = 32.677, df = 8, p-value = 7.041e-05</code></pre>
 <h2 id="Survival-Probability-under-Prediction-Model">Survival Probability under Prediction Model<a class="anchor-link" href="#Survival-Probability-under-Prediction-Model">&#182;</a></h2><p>Survival analysis confirms that age, gender and class are significant predictors. Female, upper class and younger passengers are more likely to survive. Two interesting comparisons are 2nd class males and females, where being female made survival much more likely, and 1st class males and other male groups, where upper class booking greatly increased survival.</p>
-<p><img src="./Plots/Surv_Prob_Age_Class.png" alt="Age and Class"></p>
-<p><img src="./Plots/Surv_Prob_Age_Gender.png" alt="Age and Gender"></p>
-<p><img src="./Plots/Surv_Prob_Factors_All.png" alt="All Survival Factors"></p>
+<p><img src="https://raw.githubusercontent.com/Apeder/Titanic-Survival-Analysis/master/Plots/Surv_Prob_Age_Class.png" alt="Age and Class"></p>
+<p><img src="https://raw.githubusercontent.com/Apeder/Titanic-Survival-Analysis/master/Plots/Surv_Prob_Age_Gender.png" alt="Age and Gender"></p>
+<p><img src="https://raw.githubusercontent.com/Apeder/Titanic-Survival-Analysis/master/Plots/Surv_Prob_Factors_All.png" alt="All Survival Factors"></p>
 <h2 id="Conclusion">Conclusion<a class="anchor-link" href="#Conclusion">&#182;</a></h2><p>Although gender, age and class are all significant predictors of survival, these factors applied unevenly to Titanic passengers. For example, though males generally had low survival probability, first class males were an exception, surviving at higher rates than other males. Similarly, although females survived at generally higher rates, this is more true for first class females than for third class females.  As the survival analysis reveals, third class females have about the same survival probability as second and third class males.</p>
 <p>Lastly, the low overall survival rate underscores that no group had an exceptionally high chance to survive. While the chances of dying are unbalanced, the chances of surviving are more even.  In first class, the chances of dying were about 9% versus nearly 42% in third class. However, the chances of surviving in first class were only 15% versus 13% in third class. Given these low chances of survival, the great extent to which female and upper class passengers survived is an unavoidable anomaly, typically explained by the Titanic crew filling the ship's limited lifeboats preferentially with young, female, upper class passengers.</p>
 
