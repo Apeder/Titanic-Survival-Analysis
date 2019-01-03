@@ -5,50 +5,50 @@ Titanic Survial Analysis
 
 **Passenger Survival Cross Tabulation**
 
-      |       | No |Yes| Sum
-------|-------|----|---|----
-female| 1st   |  3 | 91|  94
-      | 2nd   |  6|  70|  76
-      | 3rd   | 72|  72| 144
-      | Sum  |  81| 233| 314
-male  | 1st|    77|  45| 122
-      | 2nd    |91  |17 |108
-      | 3rd |  300|  47| 347
-      | Sum |  468| 109| 577
-Sum   | 1st  |  80 |136 |216
-      | 2nd |   97 | 87| 184
-      | 3rd  | 372 |119 |491
-      | Sum  | 549 |342 |891
+|      |       | No |Yes| Sum |
+|------|-------|----|---|---- |
+|female| 1st   |  3 | 91|  94|
+|      | 2nd   |  6|  70|  76|
+|      | 3rd   | 72|  72| 144|
+|      | Sum  |  81| 233| 314|
+|male  | 1st|    77|  45| 122|
+|      | 2nd    |91  |17 |108|
+|      | 3rd |  300|  47| 347|
+|      | Sum |  468| 109| 577|
+|Sum   | 1st  |  80 |136 |216|
+|      | 2nd |   97 | 87| 184|
+|      | 3rd  | 372 |119 |491|
+|      | Sum  | 549 |342 |891 |
 
 **All Passengers Proportion Table**
 
-        |        1st|        2nd|     3rd|         Sum
-  ------|-----------|-----------|-----------|------------
-  female| 0.105499439| 0.085297419| 0.161616162| 0.352413019
-  male  | 0.136924804| 0.121212121| 0.389450056| 0.647586981
-  Sum   | 0.242424242 |0.206509540 |0.551066218| 1.000000000
+  |      |        1st|        2nd|     3rd   |         Sum |
+  |------|-----------|-----------|-----------|------------ |
+  | female| 0.105499439| 0.085297419| 0.161616162| 0.352413019 |
+  | male  | 0.136924804| 0.121212121| 0.389450056| 0.647586981 |
+  | Sum   | 0.242424242 |0.206509540 |0.551066218| 1.000000000 |
 
 Of 891 passengers, 342 survived, yielding a 38.38% overall survival rate.  The 577 males represented about 64.75% of all passengers, yet only 18.89% of all males survived. The 314 females represented 35.24% of all passengers, yet 74.24% of all females survived. 24.24% of passengers traveled in 1st Class, 20.65% in 2nd and 55.12% in 3rd.
 
 The proportion tables below show the overall probabilities of surviving given gender and class. 
 
-###Passenger Survival Proportion Tables
+### Passenger Survival Proportion Tables
 
 **Did Not Survive**
 
-        |        1st|      2nd |      3rd   |      Sum
- -------|-----------|----------|------------|----------- 
-  female| 0.003367003| 0.006734007| 0.080808081| 0.090909091
-  male  | 0.086419753| 0.102132435| 0.336700337| 0.525252525
-  Sum   | 0.089786756| 0.108866442| 0.417508418| 0.616161616
+|        |        1st|      2nd |      3rd   |      Sum |
+| -------|-----------|----------|------------|-----------| 
+|  female| 0.003367003| 0.006734007| 0.080808081| 0.090909091 |
+|  male  | 0.086419753| 0.102132435| 0.336700337| 0.525252525 |
+|  Sum   | 0.089786756| 0.108866442| 0.417508418| 0.616161616 |
 
 **Survived**
 
-        |      1st  |      2nd  |     3rd   |      Sum
- -------|-----------|-----------|-----------|---------- 
-  female| 0.102132435| 0.078563412| 0.080808081| 0.261503928
-  male  | 0.050505051| 0.019079686| 0.052749719| 0.122334456
-  Sum   | 0.152637486| 0.097643098| 0.133557800| 0.383838384
+|        |      1st  |      2nd  |     3rd   |      Sum |
+| -------|-----------|-----------|-----------|---------- |
+|  female| 0.102132435| 0.078563412| 0.080808081| 0.261503928|
+|  male  | 0.050505051| 0.019079686| 0.052749719| 0.122334456 |
+|  Sum   | 0.152637486| 0.097643098| 0.133557800| 0.383838384 |
 
 ![Survival Rates by Class and Gender](./Plots/Survival_Rates.png)
 
@@ -91,13 +91,13 @@ The model shows significant relationships between survival, age, class and gende
 
 **Exponentiated Coefficients with 95% Confidence Interval**
 
-           |            |  2.5 %   |  97.5 %
------------|------------|----------|----------
-(Intercept)| 43.68534331| 20.37890724| 98.3863313
-Class2nd   |  0.26987422|  0.15515074|  0.4621731
-Class3rd   |  0.07572664|  0.04299250 | 0.1297997
-Sexmale    |  0.08023617|  0.05293643|  0.1194848
-Age        |  0.96369033|  0.94905346|  0.9780124
+|           |            |  2.5 %   |  97.5 % |
+|-----------|------------|----------|----------|
+|(Intercept)| 43.68534331| 20.37890724| 98.3863313|
+|Class2nd   |  0.26987422|  0.15515074|  0.4621731|
+|Class3rd   |  0.07572664|  0.04299250 | 0.1297997|
+|Sexmale    |  0.08023617|  0.05293643|  0.1194848|
+|Age        |  0.96369033|  0.94905346|  0.9780124|
 
 We double checked the model fit with a stepwise analysis of variance that drops variables one at a time and compared the change in deviance using AIC and likelihood ratio: 
 
@@ -115,7 +115,7 @@ Age     1   672.43 680.43  25.148 5.311e-07 ***
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 ```
 
-A logistic regression is said to provide a better fit to the data if it demonstrates an improvement over a model with fewer predictors. This is performed using the likelihood ratio test, which compares the likelihood of the data under the full model against the likelihood of the data under a model with fewer predictors.
+A logistic regression is said to provide a better fit to the data if it demonstrates an improvement over a model with fewer predictors. This is performed using the likelihood ratio test (LRT), which compares the likelihood of the data under the full model against the likelihood of the data under a model with fewer predictors.
 
 Lastly, the Hosmer-Lemeshow goodness of fit test also shows no significant difference between values fitted by our model and the
 observed values.
